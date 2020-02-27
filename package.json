@@ -1,11 +1,12 @@
 {
-  "name": "electron-progressbar",
-  "version": "1.2.0",
+  "name": "@linked-helper/electron-progressbar",
+  "version": "0.0.1",
   "description": "Progress bar component for Electron applications",
   "main": "source/index.js",
+  "types": "source/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AndersonMamede/electron-progressbar.git"
+    "url": "git+https://github.com/Good-Proton/electron-progressbar.git"
   },
   "keywords": [
     "electron",
@@ -15,20 +16,26 @@
     "processing"
   ],
   "author": {
-    "name": "Anderson Mamede",
-    "email": "mamede.anderson@gmail.com",
-    "url": "http://andersonmamede.com"
+    "name": "Anderson Mamede & Linked Helper Team",
+    "email": "info@linkedhelper.com",
+    "web": "https://linkedhelper.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AndersonMamede/electron-progressbar/issues"
+    "url": "https://github.com//Good-Proton/electron-progressbar/issues"
   },
-  "homepage": "https://github.com/AndersonMamede/electron-progressbar",
+  "homepage": "https://github.com//Good-Proton/electron-progressbar",
+  "scripts": {
+    "preversion": "npm run --silent lint && npm run --silent coverage",
+    "postversion": "git push && git push --tags"
+  },
   "devDependencies": {
-    "electron": "^1.7.5"
+    "electron": "^7.0.0"
   },
   "dependencies": {
     "extend": "^3.0.1"
   },
-  "readmeFilename": "README.md"
+  "peerDependencies": {
+    "electron": "^7.0.0"
+  }
 }
