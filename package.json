@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com//Good-Proton/electron-progressbar",
   "scripts": {
-    "preversion": "npm run --silent lint && npm run --silent coverage",
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
