@@ -35,6 +35,6 @@
     "extend": "^3.0.1"
   },
   "peerDependencies": {
-    "electron": "^7.0.0"
+    "electron": "^7.0.0 || ^8.0.0"
   }
 }
