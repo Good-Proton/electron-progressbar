@@ -39,8 +39,14 @@ class ProgressBar {
 				minimizable: false,
 				maximizable: false,
 				width: 500,
-				height: 170
-			}
+				height: 170,
+				webPreferences: {
+					nodeIntegration: true,
+					contextIsolation: false,
+				},
+			},
+			
+			remoteWindow: null
 		};
 
 		this._styleSelector = {
@@ -243,7 +249,11 @@ class ProgressBar {
 	}
 
 	_createWindow() {
-		this._window = new BrowserWindow(this._options.browserWindow);
+		if (this._options.remoteWindow) {
+			this._window = new this._options.remoteWindow(this._options.browserWindow);
+		} else {
+			this._window = new BrowserWindow(this._options.browserWindow);
+		}
 
 		this._window.setMenu(null);
 
@@ -483,6 +493,7 @@ const htmlContent = `
 		<div id="detail"></div>
 		<div id="progressBarContainer"></div>
 		<script>
+			const { ipcRenderer } = require('electron');
 			var currentValue = {
 				progress : null,
 				text : null,
@@ -527,23 +538,23 @@ const htmlContent = `
 				window.requestAnimationFrame(synchronizeUi);
 			}
 			
-			require("electron").ipcRenderer.on("CREATE_PROGRESS_BAR", (event, settings) => {
+			ipcRenderer.on("CREATE_PROGRESS_BAR", (event, settings) => {
 				createProgressBar(settings);
 			});
 			
-			require("electron").ipcRenderer.on("SET_PROGRESS", (event, value) => {
+			ipcRenderer.on("SET_PROGRESS", (event, value) => {
 				currentValue.progress = value;
 			});
 			
-			require("electron").ipcRenderer.on("SET_COMPLETED", (event) => {
+			ipcRenderer.on("SET_COMPLETED", (event) => {
 				elements.progressBar.classList.add('completed');
 			});
 			
-			require("electron").ipcRenderer.on("SET_TEXT", (event, value) => {
+			ipcRenderer.on("SET_TEXT", (event, value) => {
 				currentValue.text = value;
 			});
 			
-			require("electron").ipcRenderer.on("SET_DETAIL", (event, value) => {
+			ipcRenderer.on("SET_DETAIL", (event, value) => {
 				currentValue.detail = value;
 			});
 		</script>
