@@ -7,7 +7,11 @@ let progressBar;
 app.on('ready', function() {
 	mainWindow = new BrowserWindow({
 		width : 300,
-		height : 200
+		height: 200,
+		webPreferences: {
+			nodeIntegration: true,
+			contextIsolation: false
+		}
 	});
 	
 	mainWindow.loadURL(`file://${__dirname}/test_page.html`);
