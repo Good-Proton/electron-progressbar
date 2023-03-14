@@ -363,24 +363,22 @@ const htmlContent = `
 			}
 			
 			body{
-				margin: 20px;
+				margin: 1.5em;
 				margin-bottom: 0;
 				font: 13px normal Verdana, Arial, "sans-serif";
 			}
 			
 			#text{
-				height: 26px;
 				overflow: auto;
 				font-size: 14px;
 				font-weight: bold;
-				padding: 5px 0;
+				padding: 0.4em 0;
 				word-break: break-all;
 			}
 			
 			#detail{
-				height: 40px;
-				margin: 5px 0;
-				padding: 5px 0;
+				margin: 0.4em 0;
+				padding: 0.4em 0;
 				word-break: break-all;
 			}
 			
