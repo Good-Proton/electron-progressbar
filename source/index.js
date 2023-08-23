@@ -38,8 +38,10 @@ class ProgressBar {
 				closable: false,
 				minimizable: false,
 				maximizable: false,
+				titleBarStyle: 'hidden',
 				width: 500,
-				height: 170,
+				height: 140,
+				useContentSize: true,
 				webPreferences: {
 					nodeIntegration: true,
 					contextIsolation: false,
@@ -362,10 +364,14 @@ const htmlContent = `
 				box-sizing: border-box;
 			}
 			
-			body{
+			body {
 				margin: 1.5em;
 				margin-bottom: 0;
+				height: 115px;
 				font: 13px normal Verdana, Arial, "sans-serif";
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
 			}
 			
 			#text{
