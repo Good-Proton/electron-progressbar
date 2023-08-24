@@ -40,7 +40,7 @@ class ProgressBar {
 				maximizable: false,
 				titleBarStyle: 'hidden',
 				width: 500,
-				height: 140,
+				height: 150,
 				useContentSize: true,
 				webPreferences: {
 					nodeIntegration: true,
