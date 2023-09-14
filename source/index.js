@@ -40,7 +40,7 @@ class ProgressBar {
 				maximizable: false,
 				titleBarStyle: 'hidden',
 				width: 500,
-				height: 150,
+				height: process.platform === 'darwin' && options.browserWindow.parent ? 150 : 130,
 				useContentSize: true,
 				webPreferences: {
 					nodeIntegration: true,
@@ -372,7 +372,7 @@ const htmlContent = `
 			}
 			
 			body {
-				margin: 1em 1.5em 0;
+				margin: 0 1.5em;
 				height: 115px;
 				font: 13px normal Verdana, Arial, "sans-serif";
 				display: flex;
@@ -422,7 +422,7 @@ const htmlContent = `
 				overflow: hidden;
 				position: relative;
 				display: block;
-				margin: 0.5rem 0 1rem 0;
+				margin: 0.75rem 0 0.75rem 0;
 				width: 100%;
 				height: 10px;
 				border-radius: 2px;
