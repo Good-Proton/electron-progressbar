@@ -363,10 +363,16 @@ const htmlContent = `
 				padding: 0;
 				box-sizing: border-box;
 			}
+
+			html {
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
 			
 			body {
-				margin: 1.5em;
-				margin-bottom: 0;
+				margin: 1em 1.5em 0;
 				height: 115px;
 				font: 13px normal Verdana, Arial, "sans-serif";
 				display: flex;
