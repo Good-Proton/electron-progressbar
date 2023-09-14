@@ -40,7 +40,7 @@ class ProgressBar {
 				maximizable: false,
 				titleBarStyle: 'hidden',
 				width: 500,
-				height: process.platform === 'darwin' && options.browserWindow.parent ? 150 : 130,
+				height: process.platform === 'darwin' && options?.browserWindow?.parent ? 150 : 130,
 				useContentSize: true,
 				webPreferences: {
 					nodeIntegration: true,
