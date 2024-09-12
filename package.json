@@ -1,6 +1,6 @@
 {
   "name": "@linked-helper/electron-progressbar",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "The original Progress Bar component for Electron applications",
   "main": "source/index.js",
   "types": "source/index.d.ts",
