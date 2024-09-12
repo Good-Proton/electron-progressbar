@@ -1,7 +1,9 @@
 const {app} = require('electron');
 const ProgressBar = require('electron-progressbar');
 
-app.on('ready', function() {
+app.disableHardwareAcceleration();
+
+app.on('ready', async function() {
 	var progressBar = new ProgressBar({
 		indeterminate: false,
 		text: 'Preparing data...',
@@ -19,7 +21,7 @@ app.on('ready', function() {
 		.on('progress', function(value) {
 			progressBar.detail = `Value ${value} out of ${progressBar.getOptions().maxValue}...`;
 		});
-	
+
 	// launch a task and set the value of the progress bar each time a part of the task is done;
 	// the progress bar will be set as completed when it reaches its maxValue (default maxValue: 100);
 	// ps: setInterval is used here just to simulate a task being done
